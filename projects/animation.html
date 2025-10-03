@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+Student Name: Clarice Figueroa
+File Name: animation.html
+Date: 10/1/2025
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <link rel="stylesheet" href="../css/styles.css">
+
+<style>
+body {
+    font-family:myFirstFont;
+}
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+<header>
+    <div class="tab-desk">
+    <img src="../images/desktop.png" alt="desktop">
+    </div>
+        <div class="mobile-title">
+        <h1>Clarice's Portfolio</h1>
+    </div>
+</header>
+
+<nav class="topnav">
+    <ul>
+        <li><img src="../images/logo.png" alt="logo" class="logo"></li>
+        <li><a href="../projects.html">Go Back</a></li>
+    </ul>
+</nav>
+
+<header>
+
+</header>
+
+<!-- Use the main area to add the main content to the webpage -->
+<main>
+    <section>
+        <h2 style="text-align:center; margin-bottom:1em;">Animation Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <video controls width="100%" preload="metadata">
+                    <source src="animationprojects/robloxani.mov" type="video/quicktime">
+                    Your browser does not support the video tag. <a href="animationprojects/robloxani.mov">Download</a>
+                </video>
+                <h3 style="margin:0.5em 0 0.2em;">Roblox Animation (.mov)</h3>
+                <p style="font-size:1em;">Victory Animation for Roblox</p>
+            </div>
+
+            <div class="project-card">
+                <video controls width="100%" preload="metadata">
+                    <source src="animationprojects/stem.mp4" type="video/mp4">
+                    Your browser does not support the video tag. <a href="animationprojects/stem.mp4">Download</a>
+                </video>
+                <h3 style="margin:0.5em 0 0.2em;">STEM Animation (.mp4)</h3>
+                <p style="font-size:1em;">Given the task to educate viewers on a STEM activity, I chose the harvest of rainwater. With the help of Adobe Animate, I illustrated the process and how the harvest of rainwater gets to our homes.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p><a href="mailto:claricef662@students.caldwellschools.com">Contact me!</a></p>
+    <p>School Institution: <a href="https://maps.app.goo.gl/trXRes6rE8Pi8hTs8" target="_blank">Caldwell Applied Sciences Academy</p>
+</footer>
+
+</div>
+<script>
+// Force download for the Motel 8 HTML file to prevent it opening in the browser
+;(function(){
+    var link = document.getElementById('download-motel8');
+    if (!link) return;
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        var url = link.getAttribute('href');
+        // Fetch the file and trigger a blob download
+        fetch(url).then(function(resp){
+            if (!resp.ok) throw new Error('Network response was not ok');
+            return resp.blob();
+        }).then(function(blob){
+            var a = document.createElement('a');
+            var objectUrl = window.URL.createObjectURL(blob);
+            a.href = objectUrl;
+            // Suggest a filename for saving
+            a.download = 'Motel 8.html';
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            window.URL.revokeObjectURL(objectUrl);
+        }).catch(function(err){
+            // Fallback: navigate to the file if fetch fails
+            window.location.href = url;
+        });
+    });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!--
+Student Name: Clarice Figueroa
+File Name: index.html
+Date: 08/27/2025
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+   <link rel="stylesheet" href="./css/styles.css">
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    font-family:myFirstFont;
+}
+
+.portrait {
+    border-radius: 50%;
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+}
+
+.introduction {
+    font-size: 150%;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-img {
+    max-width: 700px;
+    max-height: 500px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+.carousel {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+<header>
+    <div class="tab-desk">
+    <img src="./images/desktop.png" alt="desktop">
+    </div>
+        <div class="mobile-title">
+        <h1>Clarice's Portfolio</h1>
+    </div>
+</header>
+
+<nav class="topnav">
+    <ul>
+        <li><img src="./images/logo.png" alt="logo" class="logo"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+
+<div class="container introduction my-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-12 col-md-7 text-center text-md-end">
+      <h2 style="font-family: myFirstFont;">
+        <span style="color: #6d5d82;">Hello,</span> I'm Clarice Figueroa
+      </h2>
+      <p style="font-size: 1.5rem; font-family: myFirstFont;">
+        I am a <span id="typewriter-role"></span>
+      </p>
+    </div>
+    <div class="col-12 col-md-5 text-center text-md-start">
+      <img class="portrait" src="./images/clarice.jpeg" alt="A picture of me">
+    </div>
+  </div>
+</div>
+
+
+<!-- Use the main area to add the main content to the webpage -->
+<main>
+  <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel" style="max-width: 720px; margin: 0 auto;">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./slideshow/ATAPoster.png" class="carousel-img" alt="A poster design for the graduating class of 2027, AT">
+      </div>
+      <div class="carousel-item">
+        <img src="./slideshow/FreezeEvent.png" class="carousel-img" alt="A poster design for a faculty freeze event">
+      </div>
+      <div class="carousel-item">
+        <img src="./slideshow/LuigiMagazine.jpg" class="carousel-img" alt="A magazine cover design for luigi">
+      </div>
+      <div class="carousel-item">
+        <img src="./slideshow/Wayfinding.png" class="carousel-img" alt="Wayfinding design For Lenoir">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</main>
+
+<footer>
+    <p><a href="mailto:claricef662@students.caldwellschools.com">Contact me!</a></p>
+    <p>School Institution: <a href="https://maps.app.goo.gl/trXRes6rE8Pi8hTs8" target="_blank">Caldwell Applied Sciences Academy</p>
+    </a>
+</footer>
+
+<script>
+const roles = [
+  "Graphic Designer",
+  "Computer Enthusiast",
+  "Illustrator",
+  "Web Designer",
+  "Video Editor",
+];
+const typewriterSpan = document.getElementById("typewriter-role");
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeRole() {
+  const currentRole = roles[roleIndex];
+  if (!deleting) {
+    typewriterSpan.textContent = currentRole.slice(0, charIndex++);
+    if (charIndex > currentRole.length) {
+      deleting = true;
+      setTimeout(typeRole, 1200); // Pause before deleting
+    } else {
+      setTimeout(typeRole, 100); // Typing speed
+    }
+  } else {
+    typewriterSpan.textContent = currentRole.slice(0, --charIndex);
+    if (charIndex === 0) {
+      deleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      setTimeout(typeRole, 400); // Pause before typing next
+    } else {
+      setTimeout(typeRole, 50); // Deleting speed
+    }
+  }
+}
+typeRole();
+</script>
+  
+</div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+/*
+Author: Clarice Figueroa
+File Name: styles.css
+Date: 9/10/2025
+*/
+
+/* CSS Reset */
+
+body,header,nav,main,footer,img,h1,h3,ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+/* Style rules for body and images */
+
+body {
+    background-color: whitesmoke;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+header img {
+    width: 100%;
+    height: 50vh;
+    object-fit: cover;
+}
+
+/* Style rules for navigation area */
+
+nav {
+    background-color: lavender
+}
+
+nav li {
+    display: inline-block;
+    font-size: 1em;
+    font-family: myFirstFont, sans-serif;
+}
+
+nav li a {
+    display: block;
+    color: #f6eee4;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    padding-left: 2em;
+    padding-right: 2em;
+    text-decoration: none;
+}
+
+.topnav ul {
+    list-style-type: none; /* Removes the bullet points */
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Ensures the background color fills the bar */
+    background-color: lavender;
+    display: flex;
+    align-items: center;
+}
+
+nav,
+.topnav ul {
+    width: 100%;
+}
+
+.topnav li:first-child {
+    margin-right: auto
+}
+
+
+.topnav li a {
+    display: block;
+    color: black;
+    text-align: right;
+    padding: 1.2em .75em;
+    text-decoration: none;
+}
+
+/* Dynamic Psuedo Class For Hover Effect */
+nav li a:hover {
+    background-color: #d1c4e9;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Style rules for main content */
+
+main {
+    padding:1%;
+    font-family: myFirstFont, sans-serif
+}
+
+/* Project grid and card styles to avoid overlap */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #ccc;
+  width: 300px; /* base width */
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Make cards shrink on small screens but keep consistent spacing */
+@media (max-width: 480px) {
+  .project-card {
+    width: calc(100% - 2rem);
+  }
+}
+
+main p {
+    font-size: 1.25em;
+}
+
+main h3 {
+    padding-top: 1%;
+}
+
+main ul {
+    list-style: square;
+}
+
+/* Custom Font */
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(FallingSky-JKwK.otf)
+}
+
+/* Style rules for footer content */
+
+footer {
+        background-color: lavender;
+        padding: 1em .75em;
+        text-align: center;
+    }
+
+footer a {
+    text-decoration: none;
+}
+
+/* Logo Style */
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+/* Youtube Video Link */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Resume Button Style */
+
+#resume {
+ text-align: center;
+}
+
+.mobile-title {
+    display: none;
+}
+
+/* Mobile Style Query */
+@media screen and (max-width: 767px) {
+
+  .mobile-title {
+    display: block;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .portrait {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .tab-desk {
+    display: none;
+  }
+
+  .mobile h1 {
+    padding: 2%;
+    text-align: center;
+  }
+
+  .topnav ul {
+    display: block;
+  }
+
+  nav.topnav li {
+    display: block;
+    border-top: solid .10px whitesmoke;
+  }
+
+  nav.topnav li:first-child {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    border-top: none;
+  }
+
+  nav.topnav li a {
+    text-align: center;
+    font-size: 1em;
+  }
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12em;
+  }
+}
+
+/* Tablet Style Query */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+  .logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12em;
+  }
+
+  .mobile-title {
+    display: block;
+    text-align: center;
+    padding-top: 60px;
+  }
+
+  .tab-desk {
+    display: none;
+  }
+
+  .mobile h1 {
+    padding: 2%;
+    text-align: center;
+  }
+
+  .topnav ul {
+    display: block;
+  }
+
+  nav.topnav li {
+    display: block;
+    border-top: solid .10px whitesmoke;
+  }
+
+  nav.topnav li:first-child {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -5%);
+    border-top: none;
+  }
+
+  nav.topnav li a {
+    text-align: center;
+    font-size: 1em;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Desktop Style Query */
+
+@media screen and (min-width: 1025px) {
+  body {
+    background: linear-gradient(135deg, #ffffff, #b39bd9 100%);
+  }
+
+  #wrapper {
+    background: rgb(246, 247, 255);
+    max-width: 1500px;
+    margin: 2em auto;
+    border-radius: 16px;
+    padding: 2em;
+    overflow-x: auto;
+  }
+
+  html, body {
+    min-height: 100vh;
+  }
+  body {
+    background: linear-gradient(135deg, #ffffff 0%, #b39bd9 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+

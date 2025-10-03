@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+Student Name: Clarice Figueroa
+File Name: template.html
+Date: 08/27/2025
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+<style>
+body {
+    font-family:myFirstFont;
+}
+
+.graphicdesign {
+  border: mediumpurple;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  font-family: myFirstFont;
+  background-color: mediumpurple;
+  color: black;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 16px;
+  margin: .5em 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.multimedia {
+  border: mediumpurple;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  font-family: myFirstFont;
+  background-color: mediumpurple;
+  color: black;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 16px;
+  margin: .5em 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.animation {
+  border: mediumpurple;
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  font-family: myFirstFont;
+  background-color: mediumpurple;
+  color: black;
+  padding: 1em 2em;
+  text-decoration: none;
+  font-size: 16px;
+  margin: .5em 1em;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+</style>
+</head>
+<body>
+<div id="wrapper">
+
+<header>
+    <div class="tab-desk">
+    <img src="./images/desktop.png" alt="desktop">
+    </div>
+        <div class="mobile-title">
+        <h1>Clarice's Portfolio</h1>
+    </div>
+</header>
+
+<nav class="topnav">
+    <ul>
+        <li><img src="./images/logo.png" alt="logo" class="logo"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<header>
+
+</header>
+
+<!-- Use the main area to add the main content to the webpage -->
+<main>
+This features some of my projects I've worked on in class. Click the buttons below to see my work!
+    <div id="graphicdesign">
+    <button class="graphicdesign" onclick="openLink1()">Go to Graphic Design</button>
+
+    <script>
+        function openLink1() {
+            // The path is relative to the location of your HTML file
+            window.open('./projects/graphicdesign.html','_self');
+        }
+    </script>
+
+        <div id="multimedia">
+    <button class="multimedia" onclick="openLink2()">Go to Multimedia Applications</button>
+
+    <script>
+        // This function opens your local PDF file in a new tab
+        function openLink2() {
+            // The path is relative to the location of your HTML file
+            window.open('./projects/multimedia.html','_self');
+        }
+    </script>
+
+        <div id="animation">
+    <button class="animation" onclick="openLink3()">Go to Animation</button>
+
+    <script>
+        // This function opens your local PDF file in a new tab
+        function openLink3() {
+            // The path is relative to the location of your HTML file
+            window.open('./projects/animation.html','_self');
+        }
+    </script>
+    <br><br>
+</div>
+</main>
+
+<footer>
+    <p><a href="mailto:claricef662@students.caldwellschools.com">Contact me!</a></p>
+    <p>School Institution: <a href="https://maps.app.goo.gl/trXRes6rE8Pi8hTs8" target="_blank">Caldwell Applied Sciences Academy</p>
+</footer>
+
+</div>
+</body>
+</html>
